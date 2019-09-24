@@ -21,11 +21,14 @@ function distinct1(arr) {
     return result;
 }
 
+console.time('随机生成一百万的元素的数组');
 var array = [];
 for (var i = 0; i < 1000000; i++) {
     array.push(parseInt(Math.random()*10));
 }
 console.log(array);
+console.timeEnd('随机生成一百万的元素的数组');
+
 
 console.time('两层for循环去重');
 console.log(distinct1(array));
