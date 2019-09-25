@@ -24,7 +24,7 @@ function distinct1(arr) {
 console.time('随机生成一百万的元素的数组');
 var array = [];
 for (var i = 0; i < 1000000; i++) {
-    array.push(parseInt(Math.random()*10));
+    array.push(parseInt(Math.random()*100));
 }
 console.log(array);
 console.timeEnd('随机生成一百万的元素的数组');
@@ -104,12 +104,12 @@ console.timeEnd('对象法去重');
 /*5.filter方法去重*/
 
 /*利用indexOf的第二个参数去避免不必要的查询*/
-function distinct5(arr = testArr) {
+function distinct5(arr) {
     return arr.filter((v, i, array) => array.indexOf(v, i+1) < 0)
 }
 
 /*利用数组的索引的唯一性来去重*/
-function distinct6(arr = testArr) {
+function distinct6(arr) {
     return arr.filter((v, i, array) => array.indexOf(v) === i)
 }
 
